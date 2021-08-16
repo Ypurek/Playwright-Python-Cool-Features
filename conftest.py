@@ -29,3 +29,12 @@ def page(chromium):
     yield page
     page.close()
     context.close()
+
+
+@fixture(scope='module')
+def alice(page):
+    page.goto('http://127.0.0.1:8000')
+    page.fill('#id_username', 'alice')
+    page.fill('id=id_password', 'Qamania123')
+    page.click('text="Login"')
+    return page
