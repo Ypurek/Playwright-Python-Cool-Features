@@ -24,7 +24,8 @@ def chromium():
 @fixture(scope='module')
 def page(chromium):
     context = chromium.new_context(permissions=["geolocation"],
-                                   geolocation={"latitude": 48.8, "longitude": 2.3})
+                                   geolocation={"latitude": 48.8, "longitude": 2.3},
+                                   base_url='http://127.0.0.1:8000')
     page = context.new_page()
     yield page
     page.close()
@@ -33,7 +34,7 @@ def page(chromium):
 
 @fixture(scope='module')
 def alice(page):
-    page.goto('http://127.0.0.1:8000')
+    page.goto('')
     page.fill('#id_username', 'alice')
     page.fill('id=id_password', 'Qamania123')
     page.click('text="Login"')
