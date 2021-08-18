@@ -7,6 +7,7 @@ By Oleksii Ostapov
 - [Playwright website](https://playwright.dev/python/)
 - [QA Mania Telegram Channel](https://t.me/qamania) <-- SUBSCRIBE 🥳
 - [QA Mania blog](https://qamania.org/)
+- [Playwright coding hints collection](https://qamania.org/hint/playwright/)
 - [My Playwright + Python course](https://www.udemy.com/instructor/courses)
 
 ## Precondition
