@@ -14,7 +14,7 @@ def test_wait_selector(alice):
     alice.click('a[href="/demo/"]')
     alice.click('.waitAjax')
     # waits for selector exists
-    alice.wait_for_selector('.ajaxResponses p >> nth=5')
+    alice.wait_for_selector('.ajaxResponses p >> nth=4')
     assert len(alice.query_selector_all('.ajaxResponses p')) == 5
 
 
