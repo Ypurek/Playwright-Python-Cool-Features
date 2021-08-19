@@ -8,7 +8,7 @@ By Oleksii Ostapov
 - [QA Mania Telegram Channel](https://t.me/qamania) <-- SUBSCRIBE 🥳
 - [QA Mania blog](https://qamania.org/)
 - [Playwright coding hints collection](https://qamania.org/hint/playwright/)
-- [My Playwright + Python course](https://www.udemy.com/instructor/courses)
+- [My Playwright + Python course](https://www.udemy.com/course/test-automation-with-playwright-and-python/?referralCode=0C1DD39F2C8A28802F95)
 
 ## Precondition
 
