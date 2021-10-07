@@ -1,9 +1,12 @@
 from playwright.sync_api import Dialog, ConsoleMessage, Page, Response
 from contextlib import contextmanager
 import json
+import time
 
 
 def dialog_handler(dialog: Dialog):
+    # just to show it works
+    time.sleep(2)
     print('\n\n====== close dialog ====== \n\n')
     dialog.accept()
 
