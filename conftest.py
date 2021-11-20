@@ -10,10 +10,6 @@ def chromium():
     """
     Main fixture. Creates chrome browser and yields it into tests
     Shows how to work with docs
-    # Ctrl + Click to open Playwright in code docs
-    # Ctrl + Alt + <- to get back
-
-    :return: chrome browser instance
     """
     with sync_playwright() as p:
         chromium = p.chromium.launch(headless=HEADLESS, slow_mo=SLO_MO)
