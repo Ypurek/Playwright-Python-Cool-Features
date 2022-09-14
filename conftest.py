@@ -8,7 +8,7 @@ HEADLESS = False
 @fixture(scope='module')
 def chromium():
     """
-    Main fixture. Creates chrome browser and yields it into tests
+    Main fixture. Creates Chrome browser and yields it into tests
     Shows how to work with docs
     """
     with sync_playwright() as p:
@@ -19,6 +19,7 @@ def chromium():
 
 @fixture(scope='module')
 def page(chromium):
+    # base url provided for context, so goto method can user only endpoint
     context = chromium.new_context(permissions=["geolocation"],
                                    geolocation={"latitude": 48.8, "longitude": 2.3},
                                    base_url='http://127.0.0.1:8000')

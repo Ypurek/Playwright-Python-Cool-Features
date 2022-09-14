@@ -1,2 +1,2 @@
-playwright==1.15.3
-pytest==6.2.5
+playwright
+pytest
