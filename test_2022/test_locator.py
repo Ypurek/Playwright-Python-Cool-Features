@@ -18,14 +18,8 @@ def test_locator_has_text(test_case):
 
 
 def test_locator_has_locator(test_case):
-    # find row locator by has another locator inside
-    row = test_case.locator('tbody tr', has=test_case.locator('text=Successfull registration'))
-    row.locator('.passBtn').click()
-
-    # ⚠️same way with selectors chain and css pseudo class :has DOES NOT WORK ⚠️
-    # for some reason pseudo class ignored
-    x = test_case.locator('tbody:has(.testRow_1) .passBtn').count()
-    assert x > 1
+    test_case.locator('tbody tr', has=test_case.locator('.delete_1')).locator('.passBtn').click()
+    test_case.locator('tbody tr:has(.delete_1) .passBtn').click()
 
 
 def test_locator_different_options(test_case):
