@@ -2,7 +2,7 @@ from pytest import fixture
 from playwright.sync_api import sync_playwright
 
 SLO_MO = None
-HEADLESS = True
+HEADLESS = False
 
 
 @fixture(scope='module')

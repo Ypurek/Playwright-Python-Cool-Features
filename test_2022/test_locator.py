@@ -8,6 +8,17 @@ def test_case(alice):
     return alice
 
 
+def test_locator_does_not_exist(test_case):
+    not_existing_selector = '.not_existing_selector'
+
+    # old fashion way
+    assert test_case.query_selector(not_existing_selector) is None
+    # brand-new with pytest assert
+    assert test_case.locator(not_existing_selector).is_hidden()
+    # brand-new with playwright expect
+    expect(test_case.locator(not_existing_selector)).not_to_be_visible()
+
+
 def test_locator_has_text(test_case):
     # find row locator by has_text, then find button locator
     row = test_case.locator('tbody tr', has_text='Successfull registration')
@@ -25,17 +36,6 @@ def test_locator_has_locator(test_case):
 def test_locator_different_options(test_case):
     # if locator can be changed, you may put few, separated with coma. 1st found will be used
     test_case.locator('tbody tr:has-text("Successfull registration") >> .passBtn, pass_1, .aaa').click()
-
-
-def test_locator_does_not_exist(test_case):
-    not_existing_selector = '.not_existing_selector'
-
-    # old fashion way
-    assert test_case.query_selector(not_existing_selector) is None
-    # brand-new with pytest assert
-    assert test_case.locator(not_existing_selector).is_hidden()
-    # brand-new with playwright expect
-    expect(test_case.locator(not_existing_selector)).not_to_be_visible()
 
 
 def test_locator_multiple_findings_handle(test_case):
