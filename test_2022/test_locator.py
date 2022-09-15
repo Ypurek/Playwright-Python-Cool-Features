@@ -63,3 +63,14 @@ def test_locator_wait(alice):
     # last_record.wait_for(state='hidden')
     last_record.wait_for()
     assert last_record.is_visible()
+
+
+def test_check_all_text(test_case):
+    expected_summary = ['Successfull registration check',
+                        'fail password registration check',
+                        'fail empty form registration check',
+                        'successfull login check',
+                        'Check Test Cases list',
+                        ]
+    actual = test_case.locator('tbody tr td:nth-child(2)').all_text_contents()
+    assert all(summary in actual for summary in expected_summary)
