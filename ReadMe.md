@@ -31,10 +31,11 @@ In order to simplify code [pytest](https://pytest.org/) is used. It is possible 
 multiple objects can be found and handled.
 locator provides more ways to find element with has-text and has arguments
 
-### expect - new way of assertion TODO
-**Documentation**:
-**Test**: 
-**Description**: 
+### expect - new way of assertion
+**Documentation**: https://playwright.dev/python/docs/test-assertions
+**Test**: [test_expect.py](test_2022/test_expect.py)
+**Description**: as an alternative to python **assert** method expect can be used. It gets locator object and allows
+to check it has or has not attributes, values, css, Checks it is visible or not. Optional stuff, but qute nice
 
 ### Send HTTP requests with Playwright TODO
 **Documentation**:
