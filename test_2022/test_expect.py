@@ -1,6 +1,6 @@
 from playwright.sync_api import expect
 from pytest import fixture
-
+import re
 
 @fixture
 def alice_tc(alice):
@@ -9,11 +9,30 @@ def alice_tc(alice):
     return alice
 
 
+def test_old_fashion_way():
+    x = 2 + 2
+    assert x == 4
+
+
+def test_objects(alice_tc):
+    # page
+    expect(alice_tc).to_have_title('Test Cases')
+    # locator
+    locator = alice_tc.locator('.fileUploadBtn')
+    expect(locator).not_to_have_text('hello')
+    # API response
+    response = alice_tc.request.get('/getstat/')
+    expect(response).to_be_ok()
+
+
 def test_expect_basic(alice_tc):
     status = alice_tc.locator('.testStatus_1')
 
     # assert 'PASS' in status.text_content()
-    expect(status).to_have_text('PASS', timeout=5000)
+    expect(status).to_have_text('PASS')
+
+    # check out regex!
+    expect(status).to_have_text(re.compile('[PAS]{4}'))
 
     # assert status.is_visible()
     expect(status).to_be_visible()
@@ -26,6 +45,11 @@ def test_expect_basic(alice_tc):
 
     # assert 'testStatus_1 PASS' == status.get_attribute('class')
     expect(status).to_have_class('testStatus_1 PASS')
+
+
+def test_timeout(alice_tc):
+    status = alice_tc.locator('.testStatus_1')
+    expect(status).to_have_text('PASS', timeout=10_000)
 
 
 def test_expect_details(alice_tc):
