@@ -25,21 +25,21 @@ In order to simplify code [pytest](https://pytest.org/) is used. It is possible 
 
 ## Tests v 2.0 (prepared for Youtube guide at QA Mania)
 ### Work with elements with .locator()
-**Documentation**: https://playwright.dev/python/docs/locators
+**Documentation**: https://playwright.dev/python/docs/locators  
 **Test**: [test_context.py](test_2022/test_locator.py)  
 **Description**: .locator() does not raise Exception if element not found, but object, and object can be evaluated.
 multiple objects can be found and handled.
 locator provides more ways to find element with has-text and has arguments
 
 ### expect - new way of assertion
-**Documentation**: https://playwright.dev/python/docs/test-assertions
-**Test**: [test_expect.py](test_2022/test_expect.py)
+**Documentation**: https://playwright.dev/python/docs/test-assertions  
+**Test**: [test_expect.py](test_2022/test_expect.py)  
 **Description**: as an alternative to python **assert** method expect can be used. It gets locator object and allows
 to check it has or has not attributes, values, css, Checks it is visible or not. Optional stuff, but qute nice
 
 ### Send HTTP requests with Playwright TODO
-**Documentation**: https://playwright.dev/python/docs/api-testing
-**Test**: [test_http.py](test_2022/test_http.py)
+**Documentation**: https://playwright.dev/python/docs/api-testing  
+**Test**: [test_http.py](test_2022/test_http.py)  
 **Description**: Cool way to test call web API directly from Playwright. No need to run separate http client in your code
 
 ### Record / replay HAR TODO
