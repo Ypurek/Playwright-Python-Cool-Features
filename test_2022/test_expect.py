@@ -2,6 +2,7 @@ from playwright.sync_api import expect
 from pytest import fixture
 import re
 
+
 @fixture
 def alice_tc(alice):
     alice.goto('/tests')

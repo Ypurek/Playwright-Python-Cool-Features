@@ -38,9 +38,9 @@ locator provides more ways to find element with has-text and has arguments
 to check it has or has not attributes, values, css, Checks it is visible or not. Optional stuff, but qute nice
 
 ### Send HTTP requests with Playwright TODO
-**Documentation**:
-**Test**: 
-**Description**: 
+**Documentation**: https://playwright.dev/python/docs/api-testing
+**Test**: [test_http.py](test_2022/test_http.py)
+**Description**: Cool way to test call web API directly from Playwright. No need to run separate http client in your code
 
 ### Record / replay HAR TODO
 **Documentation**:
